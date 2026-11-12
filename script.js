@@ -42,6 +42,50 @@ const artworks = [
 ["SHOREBIRD STUDY","24 × 40 in","Acrylic","$650","nature"],
 ["WHAT GOD HAS MADE","18 × 22 in · Calligraphy","Acrylic & pilot pen","$285","faith"]
 ];
+const imageFiles = [
+  "god-eternal-in-the-body.jpg",
+  "hidden-manna.jpg",
+  "meet-the-grays.jpg",
+  "tear-these-down-i.jpg",
+  "tear-these-down-ii.jpg",
+  "tropical-fish-study-i.jpg",
+  "tropical-fish-study-ii.jpg",
+  "perfect-pair.jpg",
+  "helmet-of-salvation-self-portrait.jpg",
+  "five-horses-of-the-apocalypse.jpg",
+  "backyard-brawl-in-blue-and-red.jpg",
+  "tar-heels-in-action.jpg",
+  "in-one-accord-i.jpg",
+  "in-one-accord-ii.jpg",
+  "pinks-on-the-links.jpg",
+  "study-in-orange-and-black.jpg",
+  "saltwater-convention-i.jpg",
+  "saltwater-convention-ii.jpg",
+  "saltwater-convention-iii.jpg",
+  "saltwater-convention-iiii.jpg",
+  "billy-cannon.jpg",
+  "trench-war.jpg",
+  "guard-your-mind.jpg",
+  "full-armor-of-god.jpg",
+  "i-will-never-leave-you.jpg",
+  "oil-and-water-jamboree.jpg",
+  "against-the-flow.jpg",
+  "peacock-study.jpg",
+  "sticking-together-i.jpg",
+  "sticking-together-ii.jpg",
+  "apocalypse-now.jpg",
+  "keeper-of-the-garden.jpg",
+  "the-orange-family.jpg",
+  "ruth-and-boaz.jpg",
+  "sunrise-in-northern-wisconsin.jpg",
+  "the-19th-hole.jpg",
+  "the-great-awakening-i.jpg",
+  "the-great-awakening-ii.jpg",
+  "citrus-perfection.jpg",
+  "the-magnificent-mind.jpg",
+  "shorebird-study.jpg",
+  "what-god-has-made.jpg"
+];
 const palette = ["#b87a55","#687d70","#c4a783","#7b7167","#c17b51","#607d7b","#d0b58e","#887f62"];
 const grid = document.querySelector("#art-grid");
 const search = document.querySelector("#art-search");
@@ -58,12 +102,15 @@ function renderArt(){
     const visual = document.createElement("div");
     visual.className = "artwork-image";
     visual.style.setProperty("--tone",palette[originalIndex % palette.length]);
-    visual.setAttribute("role","img");
-    visual.setAttribute("aria-label",a[0] + " — portfolio image placeholder");
-    const index = document.createElement("span");index.className="art-index";index.textContent=String(originalIndex+1).padStart(2,"0");
-    const initials = document.createElement("span");initials.className="art-initial";initials.textContent=a[0].split(/\s+/).slice(0,2).map(s=>s[0]).join("");
-    const hint = document.createElement("span");hint.className="art-hint";hint.textContent="PORTFOLIO IMAGE";
-    visual.append(index,initials,hint);
+    const artworkImage = document.createElement("img");
+    artworkImage.src = "/assets/images/" + imageFiles[originalIndex];
+    artworkImage.alt = a[0] + " — original artwork by Mike Killion";
+    artworkImage.loading = "lazy";
+    artworkImage.decoding = "async";
+    const index = document.createElement("span");
+    index.className = "art-index";
+    index.textContent = String(originalIndex+1).padStart(2,"0");
+    visual.append(artworkImage,index);
     const meta = document.createElement("div");meta.className="art-meta";
     const details = document.createElement("div");
     const title = document.createElement("h3");title.textContent=a[0];
