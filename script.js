@@ -59,7 +59,7 @@ const imageFiles = [
   "in-one-accord-ii.jpg",
   "pinks-on-the-links.jpg",
   "study-in-orange-and-black.jpg",
-  "saltwater-convention-i.jpg",
+  "saltwater-convention.jpg",
   "saltwater-convention-ii.jpg",
   "saltwater-convention-iii.jpg",
   "saltwater-convention-iiii.jpg",
