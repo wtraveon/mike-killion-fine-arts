@@ -110,7 +110,7 @@ function renderArt(){
     const index = document.createElement("span");
     index.className = "art-index";
     index.textContent = String(originalIndex+1).padStart(2,"0");
-    visual.append(artworkImage,index);
+    visual.append(artworkImage,index);\n    visual.setAttribute("role","button");\n    visual.setAttribute("tabindex","0");\n    visual.setAttribute("aria-label","View details for "+a[0]);\n    const openArtwork=()=>showArtwork(originalIndex);\n    visual.addEventListener("click",openArtwork);\n    visual.addEventListener("keydown",event=>{if(event.key==="Enter"||event.key===" "){event.preventDefault();openArtwork();}});
     const meta = document.createElement("div");meta.className="art-meta";
     const details = document.createElement("div");
     const title = document.createElement("h3");title.textContent=a[0];
@@ -138,3 +138,18 @@ document.querySelector("#comment-form").addEventListener("submit",e=>{
   window.location.href="mailto:navmike8@gmail.com?subject="+subject+"&body="+body;
 });
 renderArt();
+
+const artworkDialog=document.querySelector("#artwork-dialog");
+function showArtwork(index){
+  const item=artworks[index];
+  const image=document.querySelector(".dialog-image");
+  image.src="assets/images/"+imageFiles[index];
+  image.alt=item[0]+" — original artwork by Mike Killion";
+  document.querySelector(".dialog-title").textContent=item[0];
+  document.querySelector(".dialog-info").textContent=[item[1],item[2],item[3]==="SOLD"?"Currently marked sold":item[3]].join(" · ");
+  const inquiry=document.querySelector(".dialog-inquire");
+  inquiry.href="mailto:navmike8@gmail.com?subject="+encodeURIComponent("Artwork inquiry: "+item[0])+"&body="+encodeURIComponent("Hello Mike, I would like to learn more about "+item[0]+". Please share its current availability and details.");
+  artworkDialog.showModal();
+}
+document.querySelector(".dialog-close").addEventListener("click",()=>artworkDialog.close());
+artworkDialog.addEventListener("click",event=>{if(event.target===artworkDialog)artworkDialog.close();});
