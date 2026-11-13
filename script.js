@@ -103,7 +103,7 @@ function renderArt(){
     visual.className = "artwork-image";
     visual.style.setProperty("--tone",palette[originalIndex % palette.length]);
     const artworkImage = document.createElement("img");
-    artworkImage.src = "/assets/images/" + imageFiles[originalIndex];
+    artworkImage.src = "assets/images/" + imageFiles[originalIndex];
     artworkImage.alt = a[0] + " — original artwork by Mike Killion";
     artworkImage.loading = "lazy";
     artworkImage.decoding = "async";
