@@ -1,0 +1,33 @@
+name: Package website ZIP
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'styles.css'
+      - 'script.js'
+      - 'assets/**'
+      - 'README.md'
+      - '.github/workflows/package-website.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out website
+        uses: actions/checkout@v4
+      - name: Create upload-ready ZIP
+        run: |
+          zip -r mike-killion-fine-arts-website.zip index.html styles.css script.js README.md assets
+      - name: Upload ZIP artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: mike-killion-fine-arts-website
+          path: mike-killion-fine-arts-website.zip
+          if-no-files-found: error
+          retention-days: 30
