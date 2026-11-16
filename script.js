@@ -18,7 +18,7 @@ const artworks = [
 ["SALTWATER CONVENTION I","40 × 60 in","Acrylic","$1,250","nature"],
 ["SALTWATER CONVENTION II","22 × 30 in","Acrylic","$250","nature"],
 ["SALTWATER CONVENTION III","24 × 30 in","Acrylic","$250","nature"],
-["SALTWATER CONVENTION IIII","22 × 28 in","Acrylic","$250","nature"],
+["SALTWATER CONVENTION IV","22 × 28 in","Acrylic","$250","nature"],
 ["BILLY CANNON","22 × 48 in","Acrylic","SOLD","life"],
 ["TRENCH WAR","24 × 36 in","Acrylic","$475","life"],
 ["GUARD YOUR MIND","24 × 36 in","Acrylic & pilot pen","$285","faith"],
@@ -110,7 +110,13 @@ function renderArt(){
     const index = document.createElement("span");
     index.className = "art-index";
     index.textContent = String(originalIndex+1).padStart(2,"0");
-    visual.append(artworkImage,index);\n    visual.setAttribute("role","button");\n    visual.setAttribute("tabindex","0");\n    visual.setAttribute("aria-label","View details for "+a[0]);\n    const openArtwork=()=>showArtwork(originalIndex);\n    visual.addEventListener("click",openArtwork);\n    visual.addEventListener("keydown",event=>{if(event.key==="Enter"||event.key===" "){event.preventDefault();openArtwork();}});
+    visual.append(artworkImage,index);
+    visual.setAttribute("role","button");
+    visual.setAttribute("tabindex","0");
+    visual.setAttribute("aria-label","View details for "+a[0]);
+    const openArtwork=()=>showArtwork(originalIndex);
+    visual.addEventListener("click",openArtwork);
+    visual.addEventListener("keydown",event=>{if(event.key==="Enter"||event.key===" "){event.preventDefault();openArtwork();}});
     const meta = document.createElement("div");meta.className="art-meta";
     const details = document.createElement("div");
     const title = document.createElement("h3");title.textContent=a[0];
