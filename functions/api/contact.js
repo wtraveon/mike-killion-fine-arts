@@ -77,12 +77,3 @@ export async function onRequestPost({ request, env }) {
   return json({ success: true, message: "Thanks — your message has been sent to Mike." });
 }
 
-export async function onRequest(context) {
-  if (context.request.method !== "POST") {
-    return new Response("Method Not Allowed", {
-      status: 405,
-      headers: { "allow": "POST", "cache-control": "no-store" }
-    });
-  }
-  return context.next();
-}
