@@ -72,7 +72,7 @@ const imageFiles = [
   "against-the-flow.webp",
   "peacock-study.webp",
   "sticking-together-i.webp",
-  "sticking-together-ii.webp",
+  "sticking-together-ii.jpg",
   "apocalypse-now.webp",
   "keeper-of-the-garden.webp",
   "the-orange-family.webp",
