@@ -128,7 +128,9 @@ function renderArt(){
 }
 document.querySelectorAll(".filter").forEach(button=>button.addEventListener("click",()=>{
   document.querySelectorAll(".filter").forEach(b=>b.classList.remove("active"));
-  button.classList.add("active");activeFilter=button.dataset.filter;renderArt();
+  button.classList.add("active");
+  document.querySelectorAll(".filter").forEach(b=>b.setAttribute("aria-pressed",String(b===button)));
+  activeFilter=button.dataset.filter;renderArt();
 }));
 search.addEventListener("input",renderArt);
 document.querySelector("#year").textContent=new Date().getFullYear();
