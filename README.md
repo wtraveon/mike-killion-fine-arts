@@ -1,39 +1,32 @@
 # MIKE KILLION Fine Arts
 
-A responsive portfolio website for Mike Killion's original paintings, illustration, and commissioned murals.
+A premium, responsive artist portfolio and inquiry website for original paintings, illustration, and commissioned murals by Mike Killion.
 
-## Features
-- Responsive single-page artist portfolio
-- Gallery containing 42 supplied artwork photographs
-- Artwork category filters and title search
-- Artist biography, education, and career highlights
-- Commission/mural information and contact links
-- Comment/contact form that prepares an email to the artist (no backend required)
-- Accessible navigation and reduced-motion support
+## Included
+- Responsive editorial-style artist website
+- Gallery for all 42 supplied artworks, with category filters and title search
+- Accessible artwork detail dialog and keyboard navigation
+- Artist biography, education, career highlights, and mural/commission information
+- Artist-listed dimensions, media and USD prices; sold work is clearly marked
+- Direct email and phone inquiry links
+- Search metadata, Open Graph previews, VisualArtist structured data, sitemap and robots.txt
+- Branded SVG favicon
 
-## Deploy with Cloudflare Pages
-This is a plain static HTML/CSS/JavaScript website. Connect this GitHub repository to Cloudflare Pages using **Workers & Pages → Create application → Pages → Connect to Git**.
+## Commerce and inquiry limitations
+This release is a premium portfolio and inquiry experience, not a transactional online store. It does not process payments, reserve inventory, calculate international shipping or tax, or store customer comments. The inquiry form opens the visitor's email application; it is not a server-side form. Confirm artwork availability and final prices directly with the artist before accepting payment.
 
-Use these settings:
-- Production branch: `main`
-- Framework preset: `None`
-- Build command: `exit 0`
-- Build output directory: `.`
-- Root directory: `/` (repository root)
+## Cloudflare Pages deployment
+- Connect this GitHub repository to Cloudflare Pages.
+- Framework preset: None
+- Build command: leave blank
+- Build output directory: `/` (repository root)
+- Add `mikekillionfinearts.com` as a custom domain in Cloudflare Pages and follow its DNS instructions.
+- Verify HTTPS, mobile layout, gallery images, contact links, sitemap, and social preview after deployment.
 
-Cloudflare Pages will publish the root-level `index.html` and the `assets/` directory. Once the project is connected, every push to `main` triggers a production deployment. Add `mikekillionfinearts.com` as a custom domain in the Pages project after the first successful deployment, then confirm the domain's DNS is managed by the intended Cloudflare account.
+## Before accepting international orders
+Confirm current inventory and prices with the artist. Define packaging, insurance, shipping destinations, returns, taxes/customs, and payment/refund policies. Integrate a hosted payment provider and server-side inventory/order management before presenting artwork as directly purchasable. Never place payment secrets in this static repository.
 
-Official setup guide: https://developers.cloudflare.com/pages/get-started/git-integration/
-
-## Validation
-The GitHub Actions validation workflow checks JavaScript syntax and confirms that every artwork image referenced by the gallery exists in `assets/images/`.
-
-## Portfolio images
-The 42 optimized artwork photographs are stored in `assets/images/`. The gallery references the corresponding local image files by filename.
-
-## Contact
+## Artist contact
 - Phone: 704-299-1580
 - Email: navmike8@gmail.com
-- Intended domain: MikeKillionFineArts.com
-
-Artwork titles, sizes, media, and listed prices are based on the supplied artist brief. Confirm current availability and pricing with the artist before purchase.
+- Website: https://mikekillionfinearts.com/
