@@ -156,7 +156,9 @@ function showArtwork(index){
   document.querySelector(".dialog-title").textContent=item[0];
   document.querySelector(".dialog-info").textContent=[item[1],item[2],item[3]==="SOLD"?"Marked sold — ask about a similar commission":item[3]+" USD · artist-listed price; confirm availability"].join(" · ");
   const inquiry=document.querySelector(".dialog-inquire");
-  inquiry.href="mailto:navmike8@gmail.com?subject="+encodeURIComponent("Artwork inquiry: "+item[0])+"&body="+encodeURIComponent("Hello Mike, I would like to learn more about "+item[0]+". Please share its current availability and details.");
+  const isSold=item[3]==="SOLD";
+  inquiry.textContent=isSold?"Ask about a similar commission ↗":"Request availability & delivery details ↗";
+  inquiry.href="mailto:navmike8@gmail.com?subject="+encodeURIComponent((isSold?"Similar commission inquiry: ":"Artwork availability and delivery inquiry: ")+item[0])+"&body="+encodeURIComponent("Hello Mike,\\n\\nI am interested in "+(isSold?"a similar commission inspired by ":"the artwork ")+item[0]+".\\nDestination country: \\nCity and postal code: \\n\\nPlease share current availability, final pricing, and any suitable delivery options. I understand that shipping, packaging, insurance, taxes, customs, and payment arrangements need to be confirmed directly before purchase.\\n\\nThank you.");
   artworkDialog.showModal();
 }
 document.querySelector(".dialog-close").addEventListener("click",()=>artworkDialog.close());
