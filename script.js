@@ -103,7 +103,7 @@ function renderArt(){
     visual.className = "artwork-image";
     visual.style.setProperty("--tone",palette[originalIndex % palette.length]);
     const artworkImage = document.createElement("img");
-    artworkImage.src = "assets/images/" + imageFiles[originalIndex];
+    artworkImage.src = "assets/images/" + imageFiles[originalIndex] + "?v=2";
     artworkImage.alt = a[0] + " — original artwork by Mike Killion";
     artworkImage.loading = "lazy";
     artworkImage.decoding = "async";
@@ -151,7 +151,7 @@ const artworkDialog=document.querySelector("#artwork-dialog");
 function showArtwork(index){
   const item=artworks[index];
   const image=document.querySelector(".dialog-image");
-  image.src="assets/images/"+imageFiles[index];
+  image.src="assets/images/"+imageFiles[index]+"?v=2";
   image.alt=item[0]+" — original artwork by Mike Killion";
   document.querySelector(".dialog-title").textContent=item[0];
   document.querySelector(".dialog-info").textContent=[item[1],item[2],item[3]==="SOLD"?"Marked sold — ask about a similar commission":item[3]+" USD · artist-listed price; confirm availability"].join(" · ");
