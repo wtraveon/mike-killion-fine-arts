@@ -15,7 +15,7 @@ A premium, responsive artist portfolio and inquiry website for original painting
 ## Commerce and inquiry limitations
 This release is a premium portfolio and inquiry experience, not a transactional online store. It does not process payments, reserve inventory, calculate international shipping or tax, or store customer comments. The inquiry form opens the visitor's email application; it is not a server-side form. Confirm artwork availability and final prices directly with the artist before accepting payment.
 
-## Cloudflare Pages deployment
+## Deployment
 - Connect this GitHub repository to Cloudflare Pages.
 - Framework preset: None
 - Build command: leave blank
