@@ -122,7 +122,7 @@ function renderArt(){
     const title = document.createElement("h3");title.textContent=a[0];
     const info = document.createElement("p");info.textContent=[a[1],a[2]].join(" · ");
     details.append(title,info);
-    const price = document.createElement("div");price.className=a[3]==="SOLD"?"sold":"art-price";price.textContent=a[3];
+    const price = document.createElement("div");price.className=a[3]==="SOLD"?"sold":"art-price";price.textContent=a[3]==="SOLD"?"SOLD":a[3]+" USD";
     meta.append(details,price);card.append(visual,meta);grid.append(card);
   });
 }
@@ -154,7 +154,7 @@ function showArtwork(index){
   image.src="assets/images/"+imageFiles[index];
   image.alt=item[0]+" — original artwork by Mike Killion";
   document.querySelector(".dialog-title").textContent=item[0];
-  document.querySelector(".dialog-info").textContent=[item[1],item[2],item[3]==="SOLD"?"Currently marked sold":item[3]].join(" · ");
+  document.querySelector(".dialog-info").textContent=[item[1],item[2],item[3]==="SOLD"?"Marked sold — ask about a similar commission":item[3]+" USD · artist-listed price; confirm availability"].join(" · ");
   const inquiry=document.querySelector(".dialog-inquire");
   inquiry.href="mailto:navmike8@gmail.com?subject="+encodeURIComponent("Artwork inquiry: "+item[0])+"&body="+encodeURIComponent("Hello Mike, I would like to learn more about "+item[0]+". Please share its current availability and details.");
   artworkDialog.showModal();
