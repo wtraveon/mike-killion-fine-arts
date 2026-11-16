@@ -137,13 +137,37 @@ document.querySelector("#year").textContent=new Date().getFullYear();
 const menuButton=document.querySelector(".menu-toggle"),nav=document.querySelector(".nav");
 menuButton.addEventListener("click",()=>{const open=nav.classList.toggle("open");menuButton.setAttribute("aria-expanded",String(open));menuButton.setAttribute("aria-label",open?"Close navigation":"Open navigation")});
 nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{nav.classList.remove("open");menuButton.setAttribute("aria-expanded","false")}));
-document.querySelector("#comment-form").addEventListener("submit",e=>{
+const commentForm=document.querySelector("#comment-form");
+const commentStatus=document.querySelector("#comment-status");
+const commentSubmit=commentForm.querySelector('button[type="submit"]');
+commentForm.addEventListener("submit",async e=>{
   e.preventDefault();
-  const data=new FormData(e.currentTarget);
-  const subject=encodeURIComponent("Website message from "+data.get("name"));
-  const body=encodeURIComponent("Name: "+data.get("name")+"\nEmail: "+data.get("email")+"\n\n"+data.get("message"));
-  document.querySelector("#comment-status").textContent="Opening your email app with the message addressed to Mike.";
-  window.location.href="mailto:navmike8@gmail.com?subject="+subject+"&body="+body;
+  if(!commentForm.reportValidity()) return;
+  const data=new FormData(commentForm);
+  commentSubmit.disabled=true;
+  commentSubmit.textContent="Sending…";
+  commentStatus.textContent="Sending your message securely to Mike…";
+  try{
+    const response=await fetch("/api/contact",{
+      method:"POST",
+      headers:{"content-type":"application/json"},
+      body:JSON.stringify({
+        name:data.get("name"),
+        email:data.get("email"),
+        message:data.get("message"),
+        website:data.get("website")
+      })
+    });
+    const result=await response.json();
+    if(!response.ok) throw new Error(result.error||"Your message could not be sent. Please try again.");
+    commentStatus.textContent=result.message||"Thanks — your message has been sent to Mike.";
+    commentForm.reset();
+  }catch(error){
+    commentStatus.textContent=error.message||"We couldn't send your message. Please email navmike8@gmail.com directly.";
+  }finally{
+    commentSubmit.disabled=false;
+    commentSubmit.innerHTML='Send message <span>↗</span>';
+  }
 });
 renderArt();
 
