@@ -1,8 +1,177 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://mikekillionfinearts.com/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://mikekillionfinearts.com/assets/images/god-eternal-in-the-body.webp</image:loc>
+      <image:title>GOD ETERNAL IN THE BODY — original artwork by Mike Killion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mikekillionfinearts.com/assets/images/hidden-manna.webp</image:loc>
+      <image:title>HIDDEN MANNA — original artwork by Mike Killion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mikekillionfinearts.com/assets/images/meet-the-grays.webp</image:loc>
+      <image:title>MEET THE GRAYS — original artwork by Mike Killion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mikekillionfinearts.com/assets/images/tear-these-down-i.webp</image:loc>
+      <image:title>TEAR THESE DOWN I — original artwork by Mike Killion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mikekillionfinearts.com/assets/images/tear-these-down-ii.webp</image:loc>
+      <image:title>TEAR THESE DOWN II — original artwork by Mike Killion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mikekillionfinearts.com/assets/images/tropical-fish-study-i.webp</image:loc>
+      <image:title>TROPICAL FISH STUDY I — original artwork by Mike Killion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mikekillionfinearts.com/assets/images/tropical-fish-study-ii.webp</image:loc>
+      <image:title>TROPICAL FISH STUDY II — original artwork by Mike Killion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mikekillionfinearts.com/assets/images/perfect-pair.webp</image:loc>
+      <image:title>PERFECT PAIR — original artwork by Mike Killion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mikekillionfinearts.com/assets/images/helmet-of-salvation-self-portrait.webp</image:loc>
+      <image:title>HELMET OF SALVATION — SELF-PORTRAIT — original artwork by Mike Killion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mikekillionfinearts.com/assets/images/five-horses-of-the-apocalypse.webp</image:loc>
+      <image:title>FIVE HORSES OF THE APOCALYPSE — original artwork by Mike Killion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mikekillionfinearts.com/assets/images/backyard-brawl-in-blue-and-red.webp</image:loc>
+      <image:title>BACKYARD BRAWL IN BLUE AND RED — original artwork by Mike Killion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mikekillionfinearts.com/assets/images/tar-heels-in-action.webp</image:loc>
+      <image:title>TAR HEELS IN ACTION — original artwork by Mike Killion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mikekillionfinearts.com/assets/images/in-one-accord-i.webp</image:loc>
+      <image:title>IN ONE ACCORD I — original artwork by Mike Killion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mikekillionfinearts.com/assets/images/in-one-accord-ii.webp</image:loc>
+      <image:title>IN ONE ACCORD II — original artwork by Mike Killion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mikekillionfinearts.com/assets/images/pinks-on-the-links.webp</image:loc>
+      <image:title>PINK&apos;S ON THE LINKS — original artwork by Mike Killion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mikekillionfinearts.com/assets/images/study-in-orange-and-black.webp</image:loc>
+      <image:title>STUDY IN ORANGE AND BLACK — original artwork by Mike Killion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mikekillionfinearts.com/assets/images/saltwater-convention.webp</image:loc>
+      <image:title>SALTWATER CONVENTION I — original artwork by Mike Killion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mikekillionfinearts.com/assets/images/saltwater-convention-ii.webp</image:loc>
+      <image:title>SALTWATER CONVENTION II — original artwork by Mike Killion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mikekillionfinearts.com/assets/images/saltwater-convention-iii.webp</image:loc>
+      <image:title>SALTWATER CONVENTION III — original artwork by Mike Killion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mikekillionfinearts.com/assets/images/saltwater-convention-iiii.webp</image:loc>
+      <image:title>SALTWATER CONVENTION IV — original artwork by Mike Killion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mikekillionfinearts.com/assets/images/billy-cannon.webp</image:loc>
+      <image:title>BILLY CANNON — original artwork by Mike Killion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mikekillionfinearts.com/assets/images/trench-war.webp</image:loc>
+      <image:title>TRENCH WAR — original artwork by Mike Killion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mikekillionfinearts.com/assets/images/guard-your-mind.webp</image:loc>
+      <image:title>GUARD YOUR MIND — original artwork by Mike Killion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mikekillionfinearts.com/assets/images/full-armor-of-god.webp</image:loc>
+      <image:title>FULL ARMOR OF GOD — original artwork by Mike Killion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mikekillionfinearts.com/assets/images/i-will-never-leave-you.webp</image:loc>
+      <image:title>I WILL NEVER LEAVE YOU — original artwork by Mike Killion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mikekillionfinearts.com/assets/images/oil-and-water-jamboree.webp</image:loc>
+      <image:title>OIL AND WATER JAMBOREE — original artwork by Mike Killion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mikekillionfinearts.com/assets/images/against-the-flow.webp</image:loc>
+      <image:title>AGAINST THE FLOW — original artwork by Mike Killion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mikekillionfinearts.com/assets/images/peacock-study.webp</image:loc>
+      <image:title>PEACOCK STUDY — original artwork by Mike Killion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mikekillionfinearts.com/assets/images/sticking-together-i.webp</image:loc>
+      <image:title>STICKING TOGETHER I — original artwork by Mike Killion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mikekillionfinearts.com/assets/images/sticking-together-ii.jpg</image:loc>
+      <image:title>STICKING TOGETHER II — original artwork by Mike Killion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mikekillionfinearts.com/assets/images/apocalypse-now.webp</image:loc>
+      <image:title>APOCALYPSE NOW — original artwork by Mike Killion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mikekillionfinearts.com/assets/images/keeper-of-the-garden.webp</image:loc>
+      <image:title>KEEPER OF THE GARDEN — original artwork by Mike Killion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mikekillionfinearts.com/assets/images/the-orange-family.webp</image:loc>
+      <image:title>THE ORANGE FAMILY — original artwork by Mike Killion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mikekillionfinearts.com/assets/images/ruth-and-boaz.webp</image:loc>
+      <image:title>RUTH AND BOAZ — original artwork by Mike Killion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mikekillionfinearts.com/assets/images/sunrise-in-northern-wisconsin.webp</image:loc>
+      <image:title>SUNRISE IN NORTHERN WISCONSIN — original artwork by Mike Killion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mikekillionfinearts.com/assets/images/the-19th-hole.webp</image:loc>
+      <image:title>THE 19TH HOLE — original artwork by Mike Killion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mikekillionfinearts.com/assets/images/the-great-awakening-i.webp</image:loc>
+      <image:title>THE GREAT AWAKENING I — original artwork by Mike Killion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mikekillionfinearts.com/assets/images/the-great-awakening-ii.webp</image:loc>
+      <image:title>THE GREAT AWAKENING II — original artwork by Mike Killion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mikekillionfinearts.com/assets/images/citrus-perfection.webp</image:loc>
+      <image:title>CITRUS PERFECTION — original artwork by Mike Killion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mikekillionfinearts.com/assets/images/the-magnificent-mind.webp</image:loc>
+      <image:title>THE MAGNIFICENT MIND — original artwork by Mike Killion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mikekillionfinearts.com/assets/images/shorebird-study.webp</image:loc>
+      <image:title>SHOREBIRD STUDY — original artwork by Mike Killion</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://mikekillionfinearts.com/assets/images/what-god-has-made.webp</image:loc>
+      <image:title>WHAT GOD HAS MADE — original artwork by Mike Killion</image:title>
+    </image:image>
   </url>
 </urlset>
