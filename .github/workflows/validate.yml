@@ -1,0 +1,39 @@
+name: Validate portfolio
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Validate JavaScript syntax
+        run: node --check script.js
+      - name: Validate gallery image references
+        run: |
+          python3 - <<'PY'
+          import pathlib, re
+          script = pathlib.Path("script.js").read_text()
+          match = re.search(r'const imageFiles = \[(.*?)\];', script, re.S)
+          assert match, "imageFiles array not found"
+          names = re.findall(r'"([^"]+\\.jpg)"', match.group(1))
+          assert len(names) == 42, f"Expected 42 gallery images, found {len(names)}"
+          missing = [name for name in names if not (pathlib.Path("assets/images") / name).is_file()]
+          assert not missing, "Missing gallery images: " + ", ".join(missing)
+          print(f"Validated {len(names)} gallery images.")
+          PY
+      - name: Confirm static entry points
+        run: |
+          test -s index.html
+          test -s styles.css
+          test -s script.js
+          test -s robots.txt
+          test -s sitemap.xml
