@@ -19,7 +19,7 @@ This release is a premium portfolio and inquiry experience, not a transactional 
 - Connect this GitHub repository to Cloudflare Pages.
 - Framework preset: None
 - Build command: leave blank
-- Build output directory: `/` (repository root)
+- Build output directory: `.` (repository root)
 - Add `mikekillionfinearts.com` as a custom domain in Cloudflare Pages and follow its DNS instructions.
 - Verify HTTPS, mobile layout, gallery images, contact links, sitemap, and social preview after deployment.
 
