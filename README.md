@@ -9,11 +9,13 @@ A premium, responsive artist portfolio and inquiry website for original painting
 - Artist biography, education, career highlights, and mural/commission information
 - Artist-listed dimensions, media and USD prices; sold work is clearly marked
 - Direct email and phone inquiry links
+- Server-side contact form delivery through a Cloudflare Pages Function and Resend
+- Basic input validation and a hidden honeypot spam trap
 - Search metadata, Open Graph previews, VisualArtist structured data, sitemap and robots.txt
 - Branded SVG favicon
 
 ## Commerce and inquiry limitations
-This release is a premium portfolio and inquiry experience, not a transactional online store. It does not process payments, reserve inventory, calculate international shipping or tax, or store customer comments. The inquiry form opens the visitor's email application; it is not a server-side form. Confirm artwork availability and final prices directly with the artist before accepting payment.
+This release is a premium portfolio and inquiry experience, not a transactional online store. It does not process payments, reserve inventory, calculate international shipping or tax, or store customer comments. The contact form sends inquiries to the artist through a Cloudflare Pages Function and Resend. Configure the required secrets before relying on form delivery. Confirm artwork availability and final prices directly with the artist before accepting payment.
 
 ## Deployment
 - Connect this GitHub repository to Cloudflare Pages.
