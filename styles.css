@@ -61,3 +61,7 @@
 .artwork-image:focus-visible{outline:3px solid var(--orange);outline-offset:4px}
 .filter:focus-visible,.menu-toggle:focus-visible,a:focus-visible,.button:focus-visible{outline:2px solid var(--orange);outline-offset:4px}
 @media(hover:none){.art-card:hover .artwork-image img{transform:none}}
+
+/* Contact form delivery and anti-spam field */
+.form-trap{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.comment-form .button:disabled{opacity:.65;cursor:wait;transform:none}
