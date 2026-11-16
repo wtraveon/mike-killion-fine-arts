@@ -24,11 +24,11 @@ jobs:
           script = pathlib.Path("script.js").read_text()
           match = re.search(r'const imageFiles = \[(.*?)\];', script, re.S)
           assert match, "imageFiles array not found"
-          names = re.findall(r'"([^"]+\.webp)"', match.group(1))
+          names = re.findall(r'"([^"]+\.(?:webp|jpg|jpeg|png))"', match.group(1), re.I)
           assert len(names) == 42, f"Expected 42 gallery images, found {len(names)}"
           missing = [name for name in names if not (pathlib.Path("assets/images") / name).is_file()]
           assert not missing, "Missing gallery images: " + ", ".join(missing)
-          print(f"Validated {len(names)} gallery images.")
+          print(f"Validated {len(names)} gallery images across supported image formats.")
           PY
       - name: Confirm static entry points
         run: |
