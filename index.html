@@ -3,13 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#171b18">
+  <meta name="theme-color" content="#171c19">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preload" as="image" href="assets/images/hidden-manna.jpg" fetchpriority="high">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="canonical" href="https://mikekillionfinearts.com/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="MIKE KILLION Fine Arts | Original Paintings & Murals">
   <meta property="og:description" content="Discover original paintings, faith-inspired works, illustration and commissioned murals by artist Mike Killion.">
   <meta property="og:url" content="https://mikekillionfinearts.com/">
+  <meta property="og:image" content="https://mikekillionfinearts.com/assets/images/hidden-manna.jpg">
+  <meta property="og:image:alt" content="Hidden Manna, an original painting by Mike Killion">
+  <meta name="twitter:title" content="MIKE KILLION Fine Arts | Original Paintings & Murals">
+  <meta name="twitter:description" content="Original paintings, illustration and commissioned murals by artist Mike Killion.">
+  <meta name="twitter:image" content="https://mikekillionfinearts.com/assets/images/hidden-manna.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="description" content="Discover original paintings, faith-inspired works, illustration and commissioned murals by Mike Killion. Explore the collection and inquire about an original artwork or commission.">
   <meta property="og:image" content="https://mikekillionfinearts.com/assets/images/hidden-manna.jpg">
@@ -33,6 +41,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Mike Killion","url":"https://mikekillionfinearts.com/","jobTitle":"Fine Artist, Illustrator and Muralist","email":"mailto:navmike8@gmail.com","telephone":"+1-704-299-1580","knowsAbout":["Fine art","Painting","Illustration","Murals","Architectural rendering"],"description":"Artist creating original paintings, illustrations and commissioned murals."}</script>
 </head>
 <body>
   <div class="announcement">Original paintings · Illustration · Commissioned murals</div>
@@ -81,10 +90,10 @@
       </div>
       <div class="gallery-tools">
         <div class="filters" role="group" aria-label="Filter artwork">
-          <button class="filter active" data-filter="all">All works <span>42</span></button>
-          <button class="filter" data-filter="faith">Faith & symbolism</button>
-          <button class="filter" data-filter="nature">Nature & wildlife</button>
-          <button class="filter" data-filter="life">People & places</button>
+          <button class="filter active" data-filter="all" aria-pressed="true">All works <span>42</span></button>
+          <button class="filter" data-filter="faith" aria-pressed="false">Faith & symbolism</button>
+          <button class="filter" data-filter="nature" aria-pressed="false">Nature & wildlife</button>
+          <button class="filter" data-filter="life" aria-pressed="false">People & places</button>
         </div>
         <label class="search-wrap"><span>⌕</span><input id="art-search" type="search" placeholder="Search artwork…" aria-label="Search artwork"></label>
       </div>
