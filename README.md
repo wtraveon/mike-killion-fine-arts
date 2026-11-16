@@ -11,8 +11,22 @@ A responsive portfolio website for Mike Killion's original paintings, illustrati
 - Comment/contact form that prepares an email to the artist (no backend required)
 - Accessible navigation and reduced-motion support
 
-## Deploy
-This is a static website. Deploy the repository root with GitHub Pages, Cloudflare Pages, Netlify, or another static host. No build command is required; use `/` as the output directory.
+## Deploy with Cloudflare Pages
+This is a plain static HTML/CSS/JavaScript website. Connect this GitHub repository to Cloudflare Pages using **Workers & Pages → Create application → Pages → Connect to Git**.
+
+Use these settings:
+- Production branch: `main`
+- Framework preset: `None`
+- Build command: `exit 0`
+- Build output directory: `.`
+- Root directory: `/` (repository root)
+
+Cloudflare Pages will publish the root-level `index.html` and the `assets/` directory. Once the project is connected, every push to `main` triggers a production deployment. Add `mikekillionfinearts.com` as a custom domain in the Pages project after the first successful deployment, then confirm the domain's DNS is managed by the intended Cloudflare account.
+
+Official setup guide: https://developers.cloudflare.com/pages/get-started/git-integration/
+
+## Validation
+The GitHub Actions validation workflow checks JavaScript syntax and confirms that every artwork image referenced by the gallery exists in `assets/images/`.
 
 ## Portfolio images
 The 42 optimized artwork photographs are stored in `assets/images/`. The gallery references the corresponding local image files by filename.
