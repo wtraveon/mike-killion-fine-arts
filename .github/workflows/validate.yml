@@ -30,6 +30,8 @@ jobs:
           assert not missing, "Missing gallery images: " + ", ".join(missing)
           print(f"Validated {len(names)} gallery images across supported image formats.")
           PY
+      - name: Validate page metadata, accessibility basics, and safe external links
+        run: python3 scripts/validate_site.py
       - name: Confirm static entry points
         run: |
           test -s index.html
