@@ -159,12 +159,13 @@ commentForm.addEventListener("submit",async e=>{
       })
     });
     const result=await response.json();
-    if(!response.ok) throw new Error(result.error||"Your message could not be sent. Please try again.");
+    if(!response.ok || result.success !== true) throw new Error(result.error||"Your message could not be sent. Please try again.");
     commentStatus.textContent=result.message||"Thanks — your message has been sent to Mike.";
     commentForm.reset();
+    commentSubmit.textContent="Message sent ✓";
+    commentSubmit.disabled=true;
   }catch(error){
     commentStatus.textContent=error.message||"We couldn't send your message. Please email navmike8@gmail.com directly.";
-  }finally{
     commentSubmit.disabled=false;
     commentSubmit.innerHTML='Send message <span>↗</span>';
   }
