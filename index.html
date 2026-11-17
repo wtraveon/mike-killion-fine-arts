@@ -44,6 +44,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <div class="announcement">Original paintings · Illustration · Commissioned murals · International inquiries welcome</div>
   <header class="site-header">
     <a class="brand" href="#home" aria-label="Mike Killion Fine Arts home">
@@ -56,7 +57,7 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main-content">
     <section class="hero" id="home">
       <div class="hero-copy">
         <p class="eyebrow"><span></span> ART THAT INVITES YOU IN</p>
@@ -97,6 +98,7 @@
         </div>
         <label class="search-wrap"><span>⌕</span><input id="art-search" type="search" placeholder="Search artwork…" aria-label="Search artwork"></label>
       </div>
+      <p class="gallery-count" id="gallery-count" aria-live="polite">Showing 42 of 42 artworks</p>
       <div class="art-grid" id="art-grid" aria-live="polite"></div>
       <p class="gallery-footnote">Artwork details and listed prices are supplied by the artist in USD. Availability, shipping, framing, and final pricing must be confirmed directly before purchase.</p>
     </section>
