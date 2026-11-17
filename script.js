@@ -94,13 +94,17 @@ function renderArt(){
   const term = search.value.trim().toLowerCase();
   const filtered = artworks.filter(a => (activeFilter === "all" || a[4] === activeFilter) && a.slice(0,4).join(" ").toLowerCase().includes(term));
   grid.innerHTML = "";
+  const count = document.querySelector("#gallery-count");
+  if(count) count.textContent = `Showing ${filtered.length} of ${artworks.length} artworks`;
   if(!filtered.length){grid.innerHTML='<p class="empty-state">No artwork matched that search. Try another title or category.</p>';return;}
   filtered.forEach((a) => {
     const originalIndex = artworks.indexOf(a);
     const card = document.createElement("article");
     card.className = "art-card";
-    const visual = document.createElement("div");
+    const visual = document.createElement("button");
+    visual.type = "button";
     visual.className = "artwork-image";
+    visual.setAttribute("aria-haspopup", "dialog");
     visual.style.setProperty("--tone",palette[originalIndex % palette.length]);
     const artworkImage = document.createElement("img");
     artworkImage.src = "assets/images/" + imageFiles[originalIndex] + "?v=2";
@@ -111,12 +115,8 @@ function renderArt(){
     index.className = "art-index";
     index.textContent = String(originalIndex+1).padStart(2,"0");
     visual.append(artworkImage,index);
-    visual.setAttribute("role","button");
-    visual.setAttribute("tabindex","0");
     visual.setAttribute("aria-label","View details for "+a[0]);
-    const openArtwork=()=>showArtwork(originalIndex);
-    visual.addEventListener("click",openArtwork);
-    visual.addEventListener("keydown",event=>{if(event.key==="Enter"||event.key===" "){event.preventDefault();openArtwork();}});
+    visual.addEventListener("click",()=>showArtwork(originalIndex));
     const meta = document.createElement("div");meta.className="art-meta";
     const details = document.createElement("div");
     const title = document.createElement("h3");title.textContent=a[0];
