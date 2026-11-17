@@ -77,3 +77,14 @@ button.artwork-image{display:block;background:#ded5c8;appearance:none;-webkit-ap
 button.artwork-image:hover img{transform:scale(1.035)}
 .menu-toggle{cursor:pointer}
 @media(max-width:650px){.nav.open{box-shadow:0 18px 28px #171c1920}.nav a{padding:3px 0}}
+
+
+/* Privacy policy page */
+.policy-main{max-width:820px;margin:0 auto;padding:100px 7vw 110px;min-height:70vh}
+.policy-main h1{font:500 clamp(48px,6vw,76px)/1.05 var(--serif);letter-spacing:-.04em;margin:12px 0 10px}
+.policy-main h1 em{color:var(--orange);font-weight:400}
+.policy-updated{font-size:11px;color:var(--muted);margin:0 0 55px}
+.policy-main h2{font:500 25px/1.2 var(--serif);margin:36px 0 10px}
+.policy-main p:not(.eyebrow):not(.policy-updated){font-size:14px;line-height:1.85;color:#555b53}
+.policy-main a:not(.text-link){color:#805037;text-decoration:underline;text-underline-offset:3px}
+.policy-back{display:inline-block;margin-top:35px}
