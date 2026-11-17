@@ -1,4 +1,5 @@
 const DESTINATION = "navmike8@gmail.com";
+const MAX_BODY_BYTES = 8192;
 
 function json(data, status = 200) {
   return new Response(JSON.stringify(data), {
@@ -18,14 +19,44 @@ function escapeHtml(value) {
 }
 
 export async function onRequestPost({ request, env }) {
+  // Reject cross-origin browser submissions. Requests without Origin remain
+  // supported for privacy-preserving clients and direct endpoint checks.
+  const origin = request.headers.get("origin");
+  if (origin) {
+    try {
+      if (new URL(origin).origin !== new URL(request.url).origin) {
+        return json({ error: "Please submit the inquiry from the website." }, 403);
+      }
+    } catch {
+      return json({ error: "Please submit the inquiry from the website." }, 403);
+    }
+  }
+
+  if (!request.headers.get("content-type")?.toLowerCase().includes("application/json")) {
+    return json({ error: "Please submit the form using the website." }, 415);
+  }
+
+  const declaredLength = Number(request.headers.get("content-length") || 0);
+  if (declaredLength > MAX_BODY_BYTES) {
+    return json({ error: "Your message is too large. Please shorten it and try again." }, 413);
+  }
+
   if (!env.RESEND_API_KEY || !env.RESEND_FROM_EMAIL) {
     return json({ error: "The contact form is not configured yet. Please email Mike directly at navmike8@gmail.com." }, 503);
   }
 
   let data;
   try {
-    data = await request.json();
+    const body = await request.text();
+    if (new TextEncoder().encode(body).byteLength > MAX_BODY_BYTES) {
+      return json({ error: "Your message is too large. Please shorten it and try again." }, 413);
+    }
+    data = JSON.parse(body);
   } catch {
+    return json({ error: "Please complete the form and try again." }, 400);
+  }
+
+  if (!data || typeof data !== "object" || Array.isArray(data)) {
     return json({ error: "Please complete the form and try again." }, 400);
   }
 
@@ -76,4 +107,3 @@ export async function onRequestPost({ request, env }) {
 
   return json({ success: true, message: "Thanks — your message has been sent to Mike." });
 }
-
