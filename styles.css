@@ -65,3 +65,15 @@
 /* Contact form delivery and anti-spam field */
 .form-trap{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
 .comment-form .button:disabled{opacity:.65;cursor:wait;transform:none}
+
+/* Launch accessibility and polish */
+.skip-link{position:absolute;left:16px;top:-60px;z-index:1000;background:#171c19;color:#fff;padding:10px 14px}
+.skip-link:focus{top:12px}
+.gallery-count{margin:-30px 0 18px;color:var(--muted);font-size:11px}
+.artwork-image{cursor:zoom-in}
+.artwork-image:focus-visible{outline:3px solid var(--orange);outline-offset:4px}
+.artwork-image img{pointer-events:none}
+button.artwork-image{display:block;background:#ded5c8;appearance:none;-webkit-appearance:none;border:0;padding:0;width:100%;color:inherit;text-align:left}
+button.artwork-image:hover img{transform:scale(1.035)}
+.menu-toggle{cursor:pointer}
+@media(max-width:650px){.nav.open{box-shadow:0 18px 28px #171c1920}.nav a{padding:3px 0}}
