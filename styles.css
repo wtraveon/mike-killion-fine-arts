@@ -88,3 +88,5 @@ button.artwork-image:hover img{transform:scale(1.035)}
 .policy-main p:not(.eyebrow):not(.policy-updated){font-size:14px;line-height:1.85;color:#555b53}
 .policy-main a:not(.text-link){color:#805037;text-decoration:underline;text-underline-offset:3px}
 .policy-back{display:inline-block;margin-top:35px}
+
+footer .footer-privacy{font-size:10px;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
