@@ -1,4 +1,4 @@
-const DESTINATION = "wtraveon1@gmail.com";
+const DESTINATION = "navmike8@gmail.com";
 const MAX_BODY_BYTES = 8192;
 
 function json(data, status = 200) {
