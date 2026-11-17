@@ -9,6 +9,9 @@ A premium, responsive artist portfolio and inquiry website for original painting
 - Artist biography, education, career highlights, and mural/commission information
 - Artist-listed dimensions, media and USD prices; sold work is clearly marked
 - Direct email and phone inquiry links
+- Collector guidance for international availability and delivery inquiries
+- Artwork-specific inquiry emails that request destination details
+- Clear disclosure that checkout, live inventory, shipping calculations, and tax/customs estimates are not yet available
 - Server-side contact form delivery through a Cloudflare Pages Function and Resend
 - Basic input validation, request-size and same-origin checks, and a hidden honeypot spam trap
 - Search metadata, Open Graph previews, VisualArtist structured data, sitemap and robots.txt
@@ -42,7 +45,7 @@ The form endpoint is `functions/api/contact.js` and sends submissions to `navmik
 Until both variables are configured and a real test succeeds, use the direct email link as a fallback. Never commit API keys to this repository.
 
 ## Before accepting international orders
-Confirm current inventory and prices with the artist. Define packaging, insurance, shipping destinations, returns, taxes/customs, and payment/refund policies. Integrate a hosted payment provider and server-side inventory/order management before presenting artwork as directly purchasable. Never place payment secrets in this static repository.
+The collector section and artwork inquiry links are an inquiry workflow only; they do not accept orders or payments. Before enabling checkout, confirm current inventory and prices with the artist; define packaging, insurance, supported shipping destinations, delivery estimates, returns, taxes/customs, and payment/refund policies; and integrate a hosted payment provider with server-side inventory/order management. Never place payment secrets in this static repository.
 
 ## Artist contact
 - Phone: 704-299-1580
