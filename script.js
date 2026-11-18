@@ -188,3 +188,26 @@ function showArtwork(index){
 }
 document.querySelector(".dialog-close").addEventListener("click",()=>artworkDialog.close());
 artworkDialog.addEventListener("click",event=>{if(event.target===artworkDialog)artworkDialog.close();});
+
+
+// Progressive reveal effects: content remains visible if observers are unavailable.
+(function initGalleryMotion(){
+  if(window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  if(!("IntersectionObserver" in window)) return;
+  const targets=document.querySelectorAll(
+    ".intro-strip > div,.section-heading,.art-card,.artist-visual,.artist-copy,.timeline article,.mural-copy,.mural-side,.purchase-details article,.comment-form,.contact-section > div"
+  );
+  targets.forEach((el,index)=>{
+    el.classList.add("motion-pending");
+    el.style.setProperty("--motion-delay",Math.min(index%4,3)*70+"ms");
+  });
+  const observer=new IntersectionObserver((entries,obs)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add("motion-visible");
+        obs.unobserve(entry.target);
+      }
+    });
+  },{threshold:.12,rootMargin:"0px 0px -35px 0px"});
+  targets.forEach(el=>observer.observe(el));
+})();
