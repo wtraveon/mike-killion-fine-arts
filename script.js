@@ -211,3 +211,18 @@ artworkDialog.addEventListener("click",event=>{if(event.target===artworkDialog)a
   },{threshold:.12,rootMargin:"0px 0px -35px 0px"});
   targets.forEach(el=>observer.observe(el));
 })();
+
+/* Open added studio-archive photos in the same accessible artwork viewer. */
+document.querySelectorAll(".added-art-image").forEach((button)=>{
+  button.addEventListener("click",()=>{
+    const img=button.querySelector("img");
+    const dialogImage=document.querySelector(".dialog-image");
+    dialogImage.src=img.src;
+    dialogImage.alt=img.alt;
+    document.querySelector(".dialog-title").textContent="Studio Archive";
+    document.querySelector(".dialog-info").textContent="Additional artwork photograph · Displayed for viewing and appreciation only — not for sale";
+    const notice=document.querySelector(".dialog-view-only");
+    if(notice) notice.textContent="Displayed for viewing only · Not for sale";
+    artworkDialog.showModal();
+  });
+});
