@@ -1,2 +1,4 @@
 *.css linguist-detectable=true
 *.css linguist-language=CSS
+styles.css linguist-detectable=true
+styles.css linguist-language=CSS
