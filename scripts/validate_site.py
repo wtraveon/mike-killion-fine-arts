@@ -34,7 +34,9 @@ for filename in ('index.html','privacy.html'):
 
 html=(ROOT/'index.html').read_text(encoding='utf-8')
 script=(ROOT/'script.js').read_text(encoding='utf-8')
-assert 'id="purchase"' in html and 'href="#purchase"' in html, 'Collector section navigation is missing'
-assert 'Request availability & delivery details' in script, 'Artwork-specific delivery inquiry missing'
+assert 'id="new-works"' in html and 'href="#new-works"' in html, 'Studio archive navigation is missing'
+assert 'Displayed for viewing and appreciation only — not for sale' in script, 'View-only artwork disclosure missing'
+assert 'Request availability & delivery details' not in script, 'Sales inquiry remains in artwork viewer'
+assert 'id="purchase"' not in html, 'Purchase section should not appear on this view-only portfolio'
 assert 'RESEND_API_KEY' in (ROOT/'README.md').read_text(encoding='utf-8'), 'Contact configuration guidance missing'
-print('Validated page metadata, canonical URLs, headings, image alt attributes, safe external links, collector flow, and deployment guidance.')
+print('Validated page metadata, canonical URLs, headings, image alt attributes, safe external links, view-only gallery, and deployment guidance.')
