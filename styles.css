@@ -234,3 +234,10 @@ footer{border-top:1px solid var(--line)}
 .art-meta{justify-content:flex-start}
 @media(max-width:900px){.added-art-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:650px){.added-art-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 13px}.added-art-card figcaption{font-size:8px}}
+
+
+/* Render the MK brand monogram as scalable vector lettering for crisp edges at every size */
+.brand-mark{overflow:hidden;-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision}
+.brand-mark svg{display:block;width:100%;height:100%;overflow:visible}
+.brand-mark svg text{font-family:Georgia,"Times New Roman",serif;font-size:21px;letter-spacing:-1.2px;fill:#17211c}
+.footer-brand .brand-mark svg text{font-size:17px}
