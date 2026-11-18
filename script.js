@@ -189,12 +189,16 @@ function showArtwork(index){
     inquiry.setAttribute("aria-disabled","true");
     inquiry.classList.add("dialog-view-only");
   }else{
-    const subject=encodeURIComponent("Artwork inquiry: "+item[0]);
-    const body=encodeURIComponent("Hello Mike, I'm interested in "+item[0]+" (listed at "+item[3]+"). Please let me know whether it is currently available and provide purchase and delivery details.");
-    inquiry.href="mailto:navmike8@gmail.com?subject="+subject+"&body="+body;
+    inquiry.href="#comments";
     inquiry.textContent="Inquire about this artwork ↗";
     inquiry.removeAttribute("aria-disabled");
     inquiry.classList.remove("dialog-view-only");
+    inquiry.onclick=()=>{
+      const messageField=commentForm.querySelector('[name="message"]');
+      messageField.value="Hello Mike, I'm interested in "+item[0]+" (artist-listed price: "+item[3]+"). Please let me know whether it is currently available and provide purchase and delivery details.";
+      commentStatus.textContent="Your inquiry about "+item[0]+" is ready. Add your name and email, then send it to Mike.";
+      artworkDialog.close();
+    };
   }
   artworkDialog.showModal();
 }
