@@ -122,7 +122,10 @@ function renderArt(){
     const title = document.createElement("h3");title.textContent=a[0];
     const info = document.createElement("p");info.textContent=[a[1],a[2]].join(" · ");
     details.append(title,info);
-    meta.append(details);card.append(visual,meta);grid.append(card);
+    const price = document.createElement("span");
+    price.className = a[3] === "SOLD" ? "sold" : "art-price";
+    price.textContent = a[3] === "SOLD" ? "SOLD" : a[3];
+    meta.append(details,price);card.append(visual,meta);grid.append(card);
   });
 }
 document.querySelectorAll(".filter").forEach(button=>button.addEventListener("click",()=>{
@@ -178,12 +181,21 @@ function showArtwork(index){
   image.src="assets/images/"+imageFiles[index]+"?v=2";
   image.alt=item[0]+" — original artwork by Mike Killion";
   document.querySelector(".dialog-title").textContent=item[0];
-  document.querySelector(".dialog-info").textContent=[item[1],item[2],"Displayed for viewing and appreciation only — not for sale"].join(" · ");
+  document.querySelector(".dialog-info").textContent=[item[1],item[2],item[3] === "SOLD" ? "SOLD" : "Artist-listed price: "+item[3]].join(" · ");
   const inquiry=document.querySelector(".dialog-inquire");
-  inquiry.removeAttribute("href");
-  inquiry.textContent="Artwork shown for viewing only";
-  inquiry.classList.add("dialog-view-only");
-  inquiry.setAttribute("aria-disabled","true");
+  if(item[3] === "SOLD"){
+    inquiry.removeAttribute("href");
+    inquiry.textContent="This artwork is marked SOLD";
+    inquiry.setAttribute("aria-disabled","true");
+    inquiry.classList.add("dialog-view-only");
+  }else{
+    const subject=encodeURIComponent("Artwork inquiry: "+item[0]);
+    const body=encodeURIComponent("Hello Mike, I'm interested in "+item[0]+" (listed at "+item[3]+"). Please let me know whether it is currently available and provide purchase and delivery details.");
+    inquiry.href="mailto:navmike8@gmail.com?subject="+subject+"&body="+body;
+    inquiry.textContent="Inquire about this artwork ↗";
+    inquiry.removeAttribute("aria-disabled");
+    inquiry.classList.remove("dialog-view-only");
+  }
   artworkDialog.showModal();
 }
 document.querySelector(".dialog-close").addEventListener("click",()=>artworkDialog.close());
