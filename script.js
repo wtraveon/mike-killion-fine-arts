@@ -122,8 +122,7 @@ function renderArt(){
     const title = document.createElement("h3");title.textContent=a[0];
     const info = document.createElement("p");info.textContent=[a[1],a[2]].join(" · ");
     details.append(title,info);
-    const price = document.createElement("div");price.className=a[3]==="SOLD"?"sold":"art-price";price.textContent=a[3]==="SOLD"?"SOLD":a[3]+" USD";
-    meta.append(details,price);card.append(visual,meta);grid.append(card);
+    meta.append(details);card.append(visual,meta);grid.append(card);
   });
 }
 document.querySelectorAll(".filter").forEach(button=>button.addEventListener("click",()=>{
@@ -179,11 +178,12 @@ function showArtwork(index){
   image.src="assets/images/"+imageFiles[index]+"?v=2";
   image.alt=item[0]+" — original artwork by Mike Killion";
   document.querySelector(".dialog-title").textContent=item[0];
-  document.querySelector(".dialog-info").textContent=[item[1],item[2],item[3]==="SOLD"?"Marked sold — ask about a similar commission":item[3]+" USD · artist-listed price; confirm availability"].join(" · ");
+  document.querySelector(".dialog-info").textContent=[item[1],item[2],"Displayed for viewing and appreciation only — not for sale"].join(" · ");
   const inquiry=document.querySelector(".dialog-inquire");
-  const isSold=item[3]==="SOLD";
-  inquiry.textContent=isSold?"Ask about a similar commission ↗":"Request availability & delivery details ↗";
-  inquiry.href="mailto:navmike8@gmail.com?subject="+encodeURIComponent((isSold?"Similar commission inquiry: ":"Artwork availability and delivery inquiry: ")+item[0])+"&body="+encodeURIComponent("Hello Mike,\n\nI am interested in "+(isSold?"a similar commission inspired by ":"the artwork ")+item[0]+".\nDestination country: \nCity and postal code: \n\nPlease share current availability, final pricing, and any suitable delivery options. I understand that shipping, packaging, insurance, taxes, customs, and payment arrangements need to be confirmed directly before purchase.\n\nThank you.");
+  inquiry.removeAttribute("href");
+  inquiry.textContent="Artwork shown for viewing only";
+  inquiry.classList.add("dialog-view-only");
+  inquiry.setAttribute("aria-disabled","true");
   artworkDialog.showModal();
 }
 document.querySelector(".dialog-close").addEventListener("click",()=>artworkDialog.close());
