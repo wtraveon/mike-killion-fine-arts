@@ -7,7 +7,8 @@ A premium, responsive artist portfolio and inquiry website for original painting
 - Gallery for all 42 supplied artworks, with category filters and title search
 - Accessible artwork detail dialog and keyboard navigation
 - Artist biography, education, career highlights, and mural/commission information
-- Artist-listed dimensions, media and USD prices; sold work is clearly marked
+- Artist-listed dimensions, media and USD prices displayed on all 42 original gallery entries; sold work is clearly marked
+- Artwork-specific email inquiry links for works not marked sold
 - Direct email and phone inquiry links
 - Collector guidance for international availability and delivery inquiries
 - Artwork-specific inquiry emails that request destination details
@@ -21,7 +22,7 @@ A premium, responsive artist portfolio and inquiry website for original painting
 - Contact endpoint request-size, content-type, and same-origin checks
 
 ## Commerce and inquiry limitations
-This release is a premium portfolio and inquiry experience, not a transactional online store. It does not process payments, reserve inventory, calculate international shipping or tax, or store customer comments. The contact form sends inquiries to the artist through a Cloudflare Pages Function and Resend. Configure the required secrets before relying on form delivery. Confirm artwork availability and final prices directly with the artist before accepting payment.
+This release is a premium portfolio and inquiry experience, not a transactional online store. It does not process payments, reserve inventory, calculate international shipping or tax, or store customer comments. The original 42-work gallery displays artist-listed prices and lets collectors email the artist about works not marked sold. The contact form sends inquiries to the artist through a Cloudflare Pages Function and Resend. Configure the required secrets before relying on form delivery. Confirm artwork availability, final prices, and delivery details directly with the artist before arranging payment.
 
 ## Deployment
 - Connect this GitHub repository to Cloudflare Pages.
